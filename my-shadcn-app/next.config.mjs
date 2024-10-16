@@ -6,6 +6,7 @@ let assetPrefix = '';
 let basePath = '';
 
 if (isGithubActions) {
+  // This assumes your repository is named "<your-repo-name>"
   const repo = process.env.GITHUB_REPOSITORY?.replace(/.*?\//, '');
   assetPrefix = `/${repo}/`;
   basePath = `/${repo}`;
@@ -17,7 +18,7 @@ const nextConfig = {
   images: {
     unoptimized: true,  // Disable image optimization for GitHub Pages
   },
-  output: 'export',  // Use 'output: export' for static site export
+  output: 'export',  // Static export configuration
 };
 
 export default nextConfig;
